@@ -1,0 +1,587 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #111111;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+header {
+  width: 100%;
+  padding: 20px;
+  background: #1b1b1b;
+  text-align: center;
+  border-bottom: 1px solid #333;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #C6FFF6;
+}
+
+main {
+  width: 90%;
+  max-width: 500px;
+  margin-top: 20px;
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+button {
+  flex: 1;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#addBtn {
+  background: #BA9EFF;
+  color: #111;
+}
+
+#addBtn:hover {
+  background: #9a7be6;
+}
+
+#generateBtn {
+  background: #F7A8F8;
+  color: #111;
+}
+
+#generateBtn:hover {
+  background: #d780d1;
+}
+
+section#passwordList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  max-height: 300px; /* or any height you want */
+  overflow-y: auto;
+  padding-right: 4px; /* space for scrollbar */
+}
+
+
+.password-card {
+  background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+  padding: 15px;
+   border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid #333;
+  color: #111; /* Dark text on bright bg */
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.password-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+
+.password-card div {
+  word-break: break-all;
+}
+
+.password-card button {
+  background: #333;
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 6px 10px;
+}
+
+.password-card button:hover {
+  background: #555;
+}
+.password-actions button {
+  background: #111;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.password-actions button:hover {
+  background: #333;
+}
+
+/* Modal styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999; /* <-- Add this line */
+}
+
+
+.modal-content {
+  background: #1e1e1e;
+  padding: 20px;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 8px;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  font-size: 1rem;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
+
+.hidden {
+  display: none;
+}
+
+
+.logo {
+  font-size: 31px;
+  font-weight: bold;
+  color: #FFE57F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.header-buttons button {
+  background: none;
+  border: none;
+  color: #eee;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.header-buttons button:hover {
+  background: #222;
+}
+.footer-illustration {
+  display: block;
+  margin: 40px auto;
+  width: 220px; /* Adjust size here */
+  max-width: 90%;
+}
+.footer-text {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #aaa;
+}
+.button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.button-group .row {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-container {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+
+.footer-illustration {
+  width: 180px;
+  max-width: 90%;
+}
+
+.footer-text {
+  margin-top: 10px;
+  font-size: 16px;      /* ⬅️ Bigger font */
+  color: #ccc;          /* ⬅️ Brighter color for contrast */
+  line-height: 1.4;
+}
+
+
+.logo {
+  font-size: 35px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #BA9EFF, #F7A8F8, #C6FFF6);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textGradient 6s ease infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-buttons {
+  justify-self: end;
+}
+.header-buttons button {
+  background: none;
+  border: none;
+  color: #eee;
+  font-size: 15px;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+.header-buttons button:hover {
+  background: #222;
+}
+.button-group .row:first-child button:first-child {
+  background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+  color: #111;
+}
+
+.button-group .row:first-child button:last-child {
+  background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+  color: #111;
+}
+
+body {
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+button {
+  /* existing styles... */
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+.footer-container {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 0.8s ease forwards;
+  animation-delay: 0.3s;
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.button-group .row button {
+  opacity: 0;
+  transform: scale(0.9);
+  animation: buttonPop 0.4s ease forwards;
+}
+
+.button-group .row button:nth-child(1) { animation-delay: 0.4s; }
+.button-group .row button:nth-child(2) { animation-delay: 0.5s; }
+.button-group .row button:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes buttonPop {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.app-header {
+  background: linear-gradient(90deg, rgba(58,36,74,0.8), rgba(17,17,17,0.9));
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: 20px 25px;
+
+  animation: headerSlide 0.6s ease forwards;
+}
+
+
+
+
+
+
+@keyframes headerSlide {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes headerSlide {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes textGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.button-container {
+  background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  margin-top: 40px;
+  display: inline-block; /* keeps it tight around buttons */
+}
+
+/* Keep your existing .button-group styles */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* You can also tweak buttons if needed */
+.button-group .row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* Optional: Make buttons pop more */
+.button-group button {
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.button-group button:hover {
+  transform: translateY(-3px);
+}
+.button-container {
+  background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+  margin-top: 40px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* this centers everything horizontally */
+}
+.button-container:hover {
+  transform: scale(1.02);
+  transition: transform 0.2s ease;
+}
+/* Notification */
+#notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #333;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 999;
+}
+
+#notification.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Search Modal Input */
+#searchModal input {
+  width: 100%;
+  padding: 10px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+#notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #333;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 999;
+}
+#notification.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+section#passwordList::-webkit-scrollbar {
+  width: 8px;
+}
+
+section#passwordList::-webkit-scrollbar-track {
+  background: #111; /* dark background track */
+  border-radius: 4px;
+}
+
+section#passwordList::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #BA9EFF, #F7A8F8, #C6FFF6);
+  border-radius: 4px;
+}
+
+section#passwordList::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #F7A8F8, #BA9EFF, #C6FFF6);
+}
+/* For the whole page scrollbars */
+body::-webkit-scrollbar,
+html::-webkit-scrollbar {
+  width: 10px;
+  height: 10px; /* This controls horizontal bar thickness */
+}
+
+body::-webkit-scrollbar-track,
+html::-webkit-scrollbar-track {
+  background: #111; /* dark track */
+}
+
+body::-webkit-scrollbar-thumb,
+html::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #BA9EFF, #F7A8F8, #C6FFF6);
+  border-radius: 6px;
+  box-shadow: 0 0 6px #F7A8F8;
+}
+
+body::-webkit-scrollbar-thumb:hover,
+html::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #F7A8F8, #BA9EFF, #C6FFF6);
+}
+#passwordList {
+  margin-top: 40px; /* You can make this bigger or smaller */
+}
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+#passwordList {
+  max-height: 300px; /* adjust as needed */
+  overflow-y: auto;
+  padding-right: 5px;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+main {
+  flex: 1;
+  overflow: hidden; /* prevents main from overflowing body */
+  display: flex;
+  flex-direction: column;
+}
+
+#passwordList {
+  flex: 1;
+  overflow-y: auto;
+}
+/* Make illustration smaller on all screens */
+.footer-container img.footer-illustration {
+  max-width: 150px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Make footer text larger */
+.footer-container p.footer-text {
+  font-size: 1rem; /* increase as needed */
+  text-align: center;
+  margin-top: 0.75rem;
+}
+
+/* Add some breathing space on small screens */
+@media (max-width: 500px) {
+  .footer-container {
+    padding: 1rem;
+  }
+
+  .footer-container img.footer-illustration {
+    max-width: 120px;
+  }
+
+  .footer-container p.footer-text {
+    font-size: 1.1rem;
+  }
+}
+.button-group button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px; /* Space between icon and text */
+}
