@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SafeKey</title>
+  <!-- Synth Theme Font & Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+  <div class="header-left"></div>
+  <div class="logo">SafeKey</div>
+  <div class="header-buttons">
+    <button id="aboutBtn">About</button>
+    <button id="helpBtn">Help</button>
+  </div>
+</header>
+
+
+
+  
+  <main>
+    <div class="button-container">
+    <div class="button-group">
+  <div class="row">
+    <button><i class="fas fa-plus"></i> New Password</button>
+<button><i class="fas fa-key"></i> Generate</button>
+
+  </div>
+  <div class="row">
+    <button><i class="fas fa-file-export"></i> Export</button>
+<button><i class="fas fa-lock"></i> Lock</button>
+<button><i class="fas fa-search"></i> Search</button>
+
+  </div>
+</div>
+</div>
+<section id="passwordList"></section>
+
+<!-- New Password Modal -->
+<div id="modal" class="modal hidden">
+  <div class="modal-content">
+    <h2>Add New Password</h2>
+    <input id="websiteInput" type="text" placeholder="Website">
+    <input id="usernameInput" type="text" placeholder="Username or Email">
+    <input id="passwordInput" type="password" placeholder="Password">
+    <button id="saveBtn" style="margin-top: 10px;">Save</button>
+    <button id="closeModalBtn" style="margin-top: 10px;">Cancel</button>
+  </div>
+</div>
+
+
+
+    
+ 
+
+
+
+
+  </main>
+
+  <!-- Add Password Modal -->
+  <div id="addModal" class="modal hidden">
+    <div class="modal-content">
+      <h2><i class="fas fa-plus-circle"></i> Add Password</h2>
+      <input type="text" id="siteInput" placeholder="Website / App"/>
+      <input type="text" id="userInput" placeholder="Username / Email"/>
+      <input type="text" id="passInput" placeholder="Password"/>
+      
+    </div>
+    
+  </div>
+  
+
+  
+  <!-- Help Modal -->
+<div id="helpModal" class="modal hidden">
+  <div class="modal-content">
+    <h2><i class="fas fa-question-circle"></i> Help</h2>
+    <p>This app lets you securely save and manage your passwords. Use the Generate button to create strong passwords, and Export to back them up.</p>
+    <button id="closeHelpBtn"><i class="fas fa-times"></i> Close</button>
+  </div>
+</div>
+
+<!-- About Modal -->
+<div id="aboutModal" class="modal hidden">
+  <div class="modal-content">
+    <h2><i class="fas fa-info-circle"></i> About</h2>
+    <p>
+  SafeKey Password Manager<br/>
+  Version 1.0<br/>
+  Built by Synth Studio.
+</p>
+<img src="images/Synth2-removebg-preview.png" alt="Your Logo" style="margin-top:15px; width:120px; max-width:80%; display:block; margin-left:auto; margin-right:auto;">
+
+    <button id="closeAboutBtn"><i class="fas fa-times"></i> Close</button>
+  </div>
+</div>
+<!-- Search Modal -->
+<div id="searchModal" class="modal hidden">
+  <div class="modal-content">
+    <h2><i class="fas fa-search"></i> Search Passwords</h2>
+    <input id="searchInput" type="text" placeholder="Enter website name" />
+    <div style="margin-top: 10px; display: flex; gap: 10px;">
+      <button id="searchConfirmBtn">Search</button>
+      <button id="searchCancelBtn">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<!-- Notification Container -->
+<div id="notification" class="hidden"></div>
+
+<div class="footer-container">
+  <img src="images/undraw_safe_0mei.svg" alt="Illustration" class="footer-illustration">
+  <p class="footer-text">🔒 Your passwords are stored securely in your browser.</p>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
